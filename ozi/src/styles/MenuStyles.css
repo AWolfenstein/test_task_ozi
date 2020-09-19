@@ -1,0 +1,36 @@
+.menu {
+  position: absolute;
+  top: 6%;
+  z-index: 10;
+  margin-left: 10% !important;
+  margin-right: 10% !important;
+  background-color: white;
+  max-height: 45%;
+}
+
+#overlay {
+  background-color: #000;
+  height: 100%;
+  left: 0;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  transition: 1.1s ease-out;
+}
+.linksCol {
+  max-width: 20% !important;
+}
+.headLink {
+  font-weight: 600;
+}
+.link {
+  color: black;
+}
+.link:hover {
+  color: red;
+}
+.subLink {
+  padding-left: 5%;
+}
