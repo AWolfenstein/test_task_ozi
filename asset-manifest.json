@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/test_task_ozi/static/css/main.4acbb3dd.chunk.css",
-    "main.js": "/test_task_ozi/static/js/main.a2b44260.chunk.js",
-    "main.js.map": "/test_task_ozi/static/js/main.a2b44260.chunk.js.map",
-    "runtime-main.js": "/test_task_ozi/static/js/runtime-main.595b8d7b.js",
-    "runtime-main.js.map": "/test_task_ozi/static/js/runtime-main.595b8d7b.js.map",
-    "static/css/2.d9ad5f5c.chunk.css": "/test_task_ozi/static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.d769066d.chunk.js": "/test_task_ozi/static/js/2.d769066d.chunk.js",
-    "static/js/2.d769066d.chunk.js.map": "/test_task_ozi/static/js/2.d769066d.chunk.js.map",
-    "index.html": "/test_task_ozi/index.html",
-    "precache-manifest.191f2489ef6a29ca8ebc646c8eed63bb.js": "/test_task_ozi/precache-manifest.191f2489ef6a29ca8ebc646c8eed63bb.js",
-    "service-worker.js": "/test_task_ozi/service-worker.js",
-    "static/css/2.d9ad5f5c.chunk.css.map": "/test_task_ozi/static/css/2.d9ad5f5c.chunk.css.map",
-    "static/css/main.4acbb3dd.chunk.css.map": "/test_task_ozi/static/css/main.4acbb3dd.chunk.css.map",
-    "static/js/2.d769066d.chunk.js.LICENSE.txt": "/test_task_ozi/static/js/2.d769066d.chunk.js.LICENSE.txt"
+    "main.css": "/test_task_ozi/tree/master/ozi/static/css/main.4acbb3dd.chunk.css",
+    "main.js": "/test_task_ozi/tree/master/ozi/static/js/main.a2c9b121.chunk.js",
+    "main.js.map": "/test_task_ozi/tree/master/ozi/static/js/main.a2c9b121.chunk.js.map",
+    "runtime-main.js": "/test_task_ozi/tree/master/ozi/static/js/runtime-main.f19974b2.js",
+    "runtime-main.js.map": "/test_task_ozi/tree/master/ozi/static/js/runtime-main.f19974b2.js.map",
+    "static/css/2.d9ad5f5c.chunk.css": "/test_task_ozi/tree/master/ozi/static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.d769066d.chunk.js": "/test_task_ozi/tree/master/ozi/static/js/2.d769066d.chunk.js",
+    "static/js/2.d769066d.chunk.js.map": "/test_task_ozi/tree/master/ozi/static/js/2.d769066d.chunk.js.map",
+    "index.html": "/test_task_ozi/tree/master/ozi/index.html",
+    "precache-manifest.0c357c5bf1ea8df4dca04b2d77be8e43.js": "/test_task_ozi/tree/master/ozi/precache-manifest.0c357c5bf1ea8df4dca04b2d77be8e43.js",
+    "service-worker.js": "/test_task_ozi/tree/master/ozi/service-worker.js",
+    "static/css/2.d9ad5f5c.chunk.css.map": "/test_task_ozi/tree/master/ozi/static/css/2.d9ad5f5c.chunk.css.map",
+    "static/css/main.4acbb3dd.chunk.css.map": "/test_task_ozi/tree/master/ozi/static/css/main.4acbb3dd.chunk.css.map",
+    "static/js/2.d769066d.chunk.js.LICENSE.txt": "/test_task_ozi/tree/master/ozi/static/js/2.d769066d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.595b8d7b.js",
+    "static/js/runtime-main.f19974b2.js",
     "static/css/2.d9ad5f5c.chunk.css",
     "static/js/2.d769066d.chunk.js",
     "static/css/main.4acbb3dd.chunk.css",
-    "static/js/main.a2b44260.chunk.js"
+    "static/js/main.a2c9b121.chunk.js"
   ]
 }
