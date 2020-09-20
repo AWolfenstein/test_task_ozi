@@ -1,15 +1,7 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { isMobile } from "react-device-detect";
 import { useWindowSize } from "../hook/hook";
-import {
-  Nav,
-  Navbar,
-  NavDropdown,
-  Button,
-  Col,
-  Row,
-  Container,
-} from "react-bootstrap";
+import { Nav, Navbar, Button } from "react-bootstrap";
 import * as Icon from "react-bootstrap-icons";
 import MenuLayout from "./MenuLayout";
 import MenuMobileLayout from "./MenuMobileLayout";
@@ -56,7 +48,11 @@ const NavBar = () => {
   ) : (
     false
   );
-  const isShowMobileMenu = show ? <MenuMobileLayout close={()=>closeMobileMenu} /> : false;
+  const isShowMobileMenu = show ? (
+    <MenuMobileLayout close={() => closeMobileMenu} />
+  ) : (
+    false
+  );
   const showFun = (event) => {
     event.persist();
     showingHoverMenu(event);

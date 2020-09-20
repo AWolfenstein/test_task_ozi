@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
-import { Container, Row, Col, Nav, Button, ButtonGroup } from "react-bootstrap";
+import React, {useState } from "react";
+import { Container, Row, Nav } from "react-bootstrap";
 import "../styles/MenuStyles.css";
 import { ArrowButton, ListLinks } from "./ArrowButton";
 import { links } from "../data/data";
@@ -13,7 +13,8 @@ const MenuMobileLayout = ({ close }) => {
     element_5: false,
     element_6: false,
   };
-  const [testState, setTestState] = useState(initialState);
+  const [buttonState, setButtonState] = useState(initialState);
+
   const link_1 = links["link_1"];
   const link_2 = links["link_2"];
   const link_3 = links["link_3"];
@@ -30,10 +31,10 @@ const MenuMobileLayout = ({ close }) => {
             <ArrowButton
               idn={link_1}
               key="link_1"
-              value="element_1"
+              id="element_1"
               setID={setIdList}
-              testState={testState.element_1}
-              setTestState={setTestState}
+              buttonState={buttonState.element_1}
+              setButtonState={setButtonState}
               inS={initialState}
             />
           ) : (
@@ -49,11 +50,11 @@ const MenuMobileLayout = ({ close }) => {
             <ArrowButton
               idn={link_2}
               key="link_2"
-              value="element_2"
+              id="element_2"
               setID={setIdList}
-              testState={testState.element_2}
+              buttonState={buttonState.element_2}
               inS={initialState}
-              setTestState={setTestState}
+              setButtonState={setButtonState}
             />
           ) : (
             false
@@ -68,10 +69,10 @@ const MenuMobileLayout = ({ close }) => {
             <ArrowButton
               idn={link_3}
               key="link_3"
-              value="element_3"
+              id="element_3"
               setID={setIdList}
-              testState={testState.element_3}
-              setTestState={setTestState}
+              buttonState={buttonState.element_3}
+              setButtonState={setButtonState}
             />
           ) : (
             false
@@ -86,10 +87,10 @@ const MenuMobileLayout = ({ close }) => {
             <ArrowButton
               idn={link_4}
               key="link_4"
-              value="element_4"
+              id="element_4"
               setID={setIdList}
-              testState={testState.element_4}
-              setTestState={setTestState}
+              buttonState={buttonState.element_4}
+              setButtonState={setButtonState}
             />
           ) : (
             false
@@ -104,10 +105,10 @@ const MenuMobileLayout = ({ close }) => {
             <ArrowButton
               idn={link_5}
               key="link_5"
-              value="element_5"
+              id="element_5"
               setID={setIdList}
-              testState={testState.element_5}
-              setTestState={setTestState}
+              buttonState={buttonState.element_5}
+              setButtonState={setButtonState}
             />
           ) : (
             false
@@ -122,10 +123,10 @@ const MenuMobileLayout = ({ close }) => {
             <ArrowButton
               idn={link_6}
               key="link_6"
-              value="element_6"
+              id="element_6"
               setID={setIdList}
-              testState={testState.element_6}
-              setTestState={setTestState}
+              buttonState={buttonState.element_6}
+              setButtonState={setButtonState}
             />
           ) : (
             false

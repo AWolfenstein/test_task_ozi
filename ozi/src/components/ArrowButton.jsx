@@ -1,30 +1,34 @@
-import React, { useEffect, useState, useRef } from "react";
-import { Button, Row, Nav, Container } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button, Row, Nav } from "react-bootstrap";
 import * as Icon from "react-bootstrap-icons";
 import "../styles/MenuStyles.css";
-import { links } from "../data/data";
+
 
 export const ArrowButton = ({
   idn,
   setID,
-  value,
-  testState,
-  setTestState,
+  id,
+  buttonState,
+  setButtonState,
   inS,
 }) => {
   const openSubMenu = (e) => {
     e.preventDefault();
-    setTestState({ ...inS, [value]: !testState });
-    testState ? setID("") : setID(idn);
+    setButtonState({ ...inS, [id]: !buttonState });
+    buttonState ? setID("") : setID(idn);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
-  const iconArrow = testState ? (
+  const iconArrow = buttonState ? (
     <Icon.ChevronUp size={26} />
   ) : (
     <Icon.ChevronDown size={26} />
   );
   return (
-    <Button className="arrowHead" onClick={openSubMenu}>
+    <Button className="arrowHead" id={id} onClick={openSubMenu}>
       {iconArrow}
     </Button>
   );
@@ -40,7 +44,7 @@ export const ListLinks = ({ idl }) => {
   const [subList, setSubList] = useState(initialState);
 
   const body = (
-    <div>
+    <div id="Sublinks">
       {idl &&
         idl.map((link, index) => {
           const firstLevel = (
@@ -50,9 +54,9 @@ export const ListLinks = ({ idl }) => {
                 {link.sublinks ? (
                   <ArrowButton
                     key={index + "_subbutton"}
-                    value={index + "_subbutton"}
-                    testState={subList[index + "_subbutton"]}
-                    setTestState={setSubList}
+                    id={index + "_subbutton"}
+                    buttonState={subList[index + "_subbutton"]}
+                    setButtonState={setSubList}
                     inS={initialState}
                     idn={link}
                     setID={setIdList}
