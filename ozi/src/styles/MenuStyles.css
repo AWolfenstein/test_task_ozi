@@ -6,6 +6,16 @@
   margin-right: 10% !important;
   background-color: white;
   max-height: 45%;
+  max-width: 80% !important;
+}
+.menuMobile {
+  position: absolute;
+  overflow: auto;
+  margin-top: 0;
+  z-index: 10;
+  width: 100%!important;
+  background-color: white;
+  max-height: 60%;
 }
 
 #overlay {
@@ -33,4 +43,23 @@
 }
 .subLink {
   padding-left: 5%;
+}
+
+.arrowHead {
+  background-color: transparent !important;
+  color: black !important;
+  border: 0px !important;
+}
+.arrowHead:focus{
+  box-shadow: 0 0px 0px rgba(0,0,0,0.15)!important;
+
+}
+.rightAlign {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+.rowMobile{
+  margin-top: 5px;
+  box-shadow: 0 1px 18px rgba(0,0,0,0.15), 0 1px 10px rgba(0,0,0,0.22);
 }

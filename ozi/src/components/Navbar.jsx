@@ -1,11 +1,23 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { isMobile } from "react-device-detect";
+import { useWindowSize } from "../hook/hook";
+import {
+  Nav,
+  Navbar,
+  NavDropdown,
+  Button,
+  Col,
+  Row,
+  Container,
+} from "react-bootstrap";
 import * as Icon from "react-bootstrap-icons";
 import MenuLayout from "./MenuLayout";
+import MenuMobileLayout from "./MenuMobileLayout";
 import "../styles/NavStyles.css";
 import { links } from "../data/data";
 const NavBar = () => {
   const sizeIcon = 26;
+  const windowSize = useWindowSize();
   const [show, setShow] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [currId, setCurrId] = useState("");
@@ -17,8 +29,11 @@ const NavBar = () => {
   const link_5 = useRef(null);
   const link_6 = useRef(null);
 
-  const ifToggle = (num) => {
-    setShow(num);
+  const ifToggle = () => {
+    setShow(!show);
+  };
+  const closeMobileMenu = () => {
+    setShow(false);
   };
   const iconToggle = show ? (
     <Icon.X color="#FFC618" size={sizeIcon} />
@@ -41,6 +56,7 @@ const NavBar = () => {
   ) : (
     false
   );
+  const isShowMobileMenu = show ? <MenuMobileLayout close={()=>closeMobileMenu} /> : false;
   const showFun = (event) => {
     event.persist();
     showingHoverMenu(event);
@@ -51,76 +67,85 @@ const NavBar = () => {
   const active_4 = link_4.current && link_4.current.id === currId;
   const active_5 = link_5.current && link_5.current.id === currId;
   const active_6 = link_6.current && link_6.current.id === currId;
+  const isMobileSize = windowSize.width < 1000;
+  const navLinksDesk = (
+    <Nav>
+      <Nav.Link
+        className="topnav"
+        id="link_1"
+        active={active_1}
+        ref={link_1}
+        onMouseEnter={showFun}
+      >
+        Элемент 1
+      </Nav.Link>
+      <Nav.Link
+        className="topnav"
+        id="link_2"
+        active={active_2}
+        ref={link_2}
+        onMouseEnter={showFun}
+      >
+        Элемент 2
+      </Nav.Link>
+      <Nav.Link
+        className="topnav"
+        id="link_3"
+        active={active_3}
+        ref={link_3}
+        onMouseEnter={showFun}
+      >
+        Элемент 3
+      </Nav.Link>
+      <Nav.Link
+        className="topnav"
+        id="link_4"
+        active={active_4}
+        ref={link_4}
+        onMouseEnter={showFun}
+      >
+        Элемент 4
+      </Nav.Link>
+      <Nav.Link
+        className="topnav"
+        id="link_5"
+        active={active_5}
+        ref={link_5}
+        onMouseEnter={showFun}
+      >
+        Элемент 5
+      </Nav.Link>
+      <Nav.Link
+        className="topnav"
+        id="link_6"
+        active={active_6}
+        ref={link_6}
+        onMouseEnter={showFun}
+      >
+        Элемент 6
+      </Nav.Link>
+    </Nav>
+  );
+  const navLinksMobile = (
+    <div className="rightAlign">
+      <Button className="arrowHead" onClick={ifToggle}>
+        {iconToggle}
+      </Button>
+    </div>
+  );
   return (
     <>
       <Navbar
         bg="light"
         expand="lg"
+        className="justify-content-md-center"
         onToggle={ifToggle}
         style={{ zIndex: "20" }}
       >
-        <Navbar.Brand></Navbar.Brand>
-        <Navbar.Toggle className="border-0">{iconToggle}</Navbar.Toggle>
-        <Navbar.Collapse className="nav-elements" id="basic-navbar-nav">
-          <Nav>
-            <Nav.Link
-              className="topnav"
-              id="link_1"
-              active={active_1}
-              ref={link_1}
-              onMouseEnter={showFun}
-            >
-              Элемент 1
-            </Nav.Link>
-            <Nav.Link
-              className="topnav"
-              id="link_2"
-              active={active_2}
-              ref={link_2}
-              onMouseEnter={showFun}
-            >
-              Элемент 2
-            </Nav.Link>
-            <Nav.Link
-              className="topnav"
-              id="link_3"
-              active={active_3}
-              ref={link_3}
-              onMouseEnter={showFun}
-            >
-              Элемент 3
-            </Nav.Link>
-            <Nav.Link
-              className="topnav"
-              id="link_4"
-              active={active_4}
-              ref={link_4}
-              onMouseEnter={showFun}
-            >
-              Элемент 4
-            </Nav.Link>
-            <Nav.Link
-              className="topnav"
-              id="link_5"
-              active={active_5}
-              ref={link_5}
-              onMouseEnter={showFun}
-            >
-              Элемент 5
-            </Nav.Link>
-            <Nav.Link
-              className="topnav"
-              id="link_6"
-              active={active_6}
-              ref={link_6}
-              onMouseEnter={showFun}
-            >
-              Элемент 6
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
+        {isMobile || isMobileSize ? navLinksMobile : navLinksDesk}
       </Navbar>
       {isShowMenu}
+      {isShowMobileMenu}
     </>
   );
 };

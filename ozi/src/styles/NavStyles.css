@@ -2,6 +2,9 @@
   align-items: center;
   justify-content: center;
 }
+.navbar {
+ 
+}
 @media (min-width: 994px) {
   .topnav:hover {
     border-bottom: 3px solid red;
