@@ -13,7 +13,7 @@
   overflow: auto;
   margin-top: 0;
   z-index: 10;
-  width: 100%!important;
+  width: 100% !important;
   background-color: white;
   max-height: 60%;
 }
@@ -50,16 +50,23 @@
   color: black !important;
   border: 0px !important;
 }
-.arrowHead:focus{
-  box-shadow: 0 0px 0px rgba(0,0,0,0.15)!important;
-
+.arrowHead:focus {
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.15) !important;
 }
 .rightAlign {
   display: flex;
   flex: 1;
   justify-content: flex-end;
 }
-.rowMobile{
+.rowMobile {
   margin-top: 5px;
-  box-shadow: 0 1px 18px rgba(0,0,0,0.15), 0 1px 10px rgba(0,0,0,0.22);
+  box-shadow: 0 1px 18px rgba(0, 0, 0, 0.15), 0 1px 10px rgba(0, 0, 0, 0.22);
+}
+.rowHeadLink {
+  padding-left: 2%;
+  border-bottom: 1px outset rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+}
+.rowLink {
+  padding-left: 4%;
 }

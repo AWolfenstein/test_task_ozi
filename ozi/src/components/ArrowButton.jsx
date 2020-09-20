@@ -4,14 +4,21 @@ import * as Icon from "react-bootstrap-icons";
 import "../styles/MenuStyles.css";
 import { links } from "../data/data";
 
-export const ArrowButton = ({ idn, setID }) => {
-  const [click, setClick] = useState(false);
-
+export const ArrowButton = ({
+  idn,
+  setID,
+  value,
+  testState,
+  setTestState,
+  inS,
+}) => {
   const openSubMenu = (e) => {
-    setClick(!click);
-    click ? setID("") : setID(idn);
+    e.preventDefault();
+    setTestState({ ...inS, [value]: !testState });
+    testState ? setID("") : setID(idn);
   };
-  const iconArrow = click ? (
+
+  const iconArrow = testState ? (
     <Icon.ChevronUp size={26} />
   ) : (
     <Icon.ChevronDown size={26} />
@@ -25,19 +32,28 @@ export const ArrowButton = ({ idn, setID }) => {
 
 export const ListLinks = ({ idl }) => {
   const [idList, setIdList] = useState("");
-  const [list, setList] = useState("");
+
+  const initialState = idl.map((link, index) => {
+    const name = index + "_subbutton";
+    return { ...index, [name]: false };
+  });
+  const [subList, setSubList] = useState(initialState);
 
   const body = (
     <div>
       {idl &&
         idl.map((link, index) => {
           const firstLevel = (
-            <Row key={index + "_headlink"}>
+            <Row key={index + "_headlink"} className="rowHeadLink">
               <Nav.Link className="link">{link.headName}</Nav.Link>
               <div className="rightAlign">
                 {link.sublinks ? (
                   <ArrowButton
                     key={index + "_subbutton"}
+                    value={index + "_subbutton"}
+                    testState={subList[index + "_subbutton"]}
+                    setTestState={setSubList}
+                    inS={initialState}
                     idn={link}
                     setID={setIdList}
                   />
@@ -70,7 +86,7 @@ const SubLevel = ({ List }) => {
       {List &&
         List.map((links, index) => {
           return (
-            <Row key={index + "_sublink"}>
+            <Row key={index + "_sublink"} className="rowLink">
               <Nav.Link className="link">{links.name}</Nav.Link>
             </Row>
           );
